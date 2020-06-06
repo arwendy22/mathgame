@@ -33,7 +33,7 @@
                     $koneksi = mysqli_connect($servername,$username,$password,$dbname) or die(mysqli_error());
 
                     $sql = "SELECT * FROM tabel_game ORDER BY score DESC LIMIT 10";
-                    $result = mysqli_query($GLOBALS['koneksi'], $sql);
+                    $result = mysqli_query($GLOBALS['koneksi'], $sql) or die("Error");
                     if (mysqli_num_rows($result) > 0) {
                         $i = 1;
                         while($row = mysqli_fetch_array($result)) {
